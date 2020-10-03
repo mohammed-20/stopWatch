@@ -12,26 +12,36 @@ body {
     font-weight: 200;
     text-align: center;
     line-height: 59px;
-    padding: 0 64px;
+    padding: 0 86px;
     cursor: pointer;
   }
 
   .stopwatch {
-    display: grid;
-    justify-items: center;
-    grid-row-gap: 23px;
-    width: 100%;
-    padding-top: 20px;
+    display: flex;
+    width: 50%;
+    padding-top: 100px;
+    height: 190px;
+    
+
+  }
+  #timer{
+    display: flex;
+    margin-left: 50%;
   }
   
+  .section{
+    display: flex;
+    
+     width: 100%;
+     flex-direction: column;
+     align-items: center;
+  }
   .circle {
     display: flex;
     justify-content: center;
     align-items: center;
-  
     height: 270px;
     width: 270px;
-  
     border: 2px solid;
     border-radius: 50%;
   }
@@ -47,8 +57,10 @@ body {
   .controls {
     display: flex;
     justify-content: space-between;
-  
     width: 187px;
+    align-items: flex-end;
+    margin-top: 30px;
+
   }
   
   button {
@@ -68,3 +80,17 @@ body {
   #pauseButton {
     display: none;
   }
+  .buttonReset{
+    margin-bottom: -3px;
+  }
+  .inpTimer{
+    color: #fff;
+    background-color: #0e0f11;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 63px;
+    height: 63px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: -3px;
+}

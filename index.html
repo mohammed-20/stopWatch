@@ -16,25 +16,27 @@
 </head>
 <body>
     <div class="stopwatch">
-        <h1 id="stopwatch">STOPWATCH</h1>
-        <h1  hidden  id="timer" >Timer</h1>
+        <h1 id="stopWatch">STOPWATCH</h1>
+        <h1 id="timer" >Timer</h1> 
+      </div>
+      <section class="section" id="section">
         <div class="circle">
           <span class="time" id="display">00:00:00</span>
         </div>
-  
-        <div class="controls">
-          <button class="buttonPlay">
+        <div  class="controls">
+          <button  class="buttonPlay">
             <img id="playButton" src="https://res.cloudinary.com/https-tinloof-com/image/upload/v1593360448/blog/time-in-js/play-button_opkxmt.svg" />
-  
+            <img hidden id="timerButton" src="https://res.cloudinary.com/https-tinloof-com/image/upload/v1593360448/blog/time-in-js/play-button_opkxmt.svg" />
             <img id="pauseButton" src="https://res.cloudinary.com/https-tinloof-com/image/upload/v1593360448/blog/time-in-js/pause-button_pinhpy.svg" />
           </button>
   
-          <button class="buttonReset">
+          <button class="buttonReset" id="buttonReset">
             <img id="resetButton" src="https://res.cloudinary.com/https-tinloof-com/image/upload/v1593360448/blog/time-in-js/reset-button_mdv6wf.svg" />
           </button>
+         <input type="number" value="0" class="inpTimer" id="inpTimer" hidden>
         </div>
-        </div>
-      </div>
+      </section>
+
 
 
 
