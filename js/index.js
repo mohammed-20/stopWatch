@@ -7,6 +7,7 @@ const timerTxt = document.getElementById('timer');
 const timerBtn = document.getElementById('timerButton');
 const inpTimer = document.getElementById('inpTimer');
 const display = document.getElementById("display");
+const displayTimer =document.getElementById("display1")
 
 
 const timeToString = (time) => {
@@ -38,10 +39,11 @@ let timerInterval;
 let print = (txt) => {
   display.textContent = txt;
 };
-
+let printTimer = (txt) => {
+  displayTimer.textContent = txt;
+};
 const  start = () => {
   startTime = Date.now() - elapsedTime;
-  console.log(startTime)
   timerInterval = setInterval( () => {
     elapsedTime = Date.now() - startTime;
     print(timeToString(elapsedTime));
@@ -60,6 +62,7 @@ const reset = () => {
   elapsedTime = 0;
   showButton("PLAY");
 }
+
 const showButton= (buttonKey) => {
   const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton;
   const buttonToHide = buttonKey === "PLAY" ? pauseButton : playButton;
@@ -70,11 +73,28 @@ const showButton= (buttonKey) => {
 const hidden = ()=>{
   document.getElementById("buttonReset").hidden = true;
  document.getElementById("inpTimer").hidden=false;
+ display.hidden=true;
+ displayTimer.hidden=false;
+ timerTxt.style.color="#999"
+ timerTxt.style.opacity="0.5"
+ timerTxt.style.textShadow="2px 2px #999"
+ stopWatchTxt.style.color="white"
+ stopWatchTxt.style.opacity="1"
+ stopWatchTxt.style.textShadow="none"
+
 };
 
 const show = ()=>{
   document.getElementById("buttonReset").hidden = false;
  document.getElementById("inpTimer").hidden=true;
+ display.hidden=false;
+ displayTimer.hidden=true;
+ stopWatchTxt.style.color="#999"
+ stopWatchTxt.style.opacity="0.5"
+ stopWatchTxt.style.textShadow="2px 2px #999"
+ timerTxt.style.color="white"
+ timerTxt.style.opacity="1"
+ timerTxt.style.textShadow="none"
 };
 pauseBtn.addEventListener("click", pause);
 resetBtn.addEventListener("click", reset);
@@ -94,14 +114,18 @@ if(inpTimer.hidden){
 const timerContent = () =>{
   const timerValue = inpTimer.value;
   let time = timerValue * 60;
-console.log(time)
 if(timerValue >= 0){
   timerInterval=setInterval(()=>{
     let minTimer = Math.floor(time / 60);
     let secTimer = time % 60;
-    console.log(minTimer,secTimer);
+    if(minTimer < 10){
+      minTimer = "0" + minTimer;
+    }
+    if(secTimer < 10){
+      secTimer ="0" + secTimer;
+    }
     let txt = textContent = `${minTimer}:${secTimer}`;
-    print(txt);
+    printTimer(txt);
     if (time > 0){
       time--;
     }else{
