@@ -76,12 +76,11 @@ const show = ()=>{
   document.getElementById("buttonReset").hidden = false;
  document.getElementById("inpTimer").hidden=true;
 };
-
 pauseBtn.addEventListener("click", pause);
 resetBtn.addEventListener("click", reset);
 timerTxt.addEventListener("click", hidden);
 stopWatchTxt.addEventListener("click", show);
-playBtn.addEventListener('click', ()=>{
+playBtn.addEventListener('click', () =>{
   console.log(inpTimer.hidden);
 if(inpTimer.hidden){
   start();
@@ -94,7 +93,6 @@ if(inpTimer.hidden){
 
 const timerContent = () =>{
   const timerValue = inpTimer.value;
-  console.dir(inpTimer)
   let time = timerValue * 60;
 console.log(time)
 if(timerValue >= 0){

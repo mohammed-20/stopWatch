@@ -24,9 +24,20 @@ body {
     
 
   }
+  #stopWatch:hover{
+    color: #999;
+    opacity: 0.5;
+    text-shadow: 2px 2px #999;
+  }
+
   #timer{
     display: flex;
     margin-left: 50%;
+  }
+  #timer:hover{
+    color: #999;
+    opacity: 0.5;
+    text-shadow: 2px 2px #999;
   }
   
   .section{
